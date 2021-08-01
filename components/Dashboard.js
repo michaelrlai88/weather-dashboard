@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { WeatherContext } from '../WeatherContext';
 import Current from './Current';
 import Hourly from './Hourly';
-import Weekly from './Weekly';
+import Daily from './Daily';
 
 const Dashboard = () => {
   const weather = useContext(WeatherContext);
@@ -14,7 +14,7 @@ const Dashboard = () => {
         <div>
           <Current />
           <Hourly />
-          <Weekly />
+          <Daily />
         </div>
       ) : (
         <div>No location yet</div>

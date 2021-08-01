@@ -1,8 +1,8 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/
 import axios from 'axios';
 
-const handler = async (req, res) => {
-  try {
+const handler = (req, res) => {
+  /*   try {
     const { location } = req.query;
 
     const response = await axios({
@@ -23,9 +23,9 @@ const handler = async (req, res) => {
     });
   } catch (error) {
     console.log(error.message);
-  }
-
-  /*   res.json({ message: 'Hello Everyone!' }); */
+  } */
+  console.log('hi');
+  res.json({ message: 'Hello Everyone!' });
 };
 
 export default handler;

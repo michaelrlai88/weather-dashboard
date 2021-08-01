@@ -7,6 +7,8 @@ const Header = () => {
   const weather = useContext(WeatherContext);
 
   const callApi = async (input) => {
+    const url = process.env.SITE_URL;
+
     try {
       const response = await axios({
         method: 'get',
