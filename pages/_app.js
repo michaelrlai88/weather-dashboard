@@ -1,10 +1,13 @@
 import Layout from '../components/Layout';
+import { WeatherProvider } from '../WeatherContext';
 
 const MyApp = ({ Component, pageProps }) => {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <WeatherProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </WeatherProvider>
   );
 };
 
