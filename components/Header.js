@@ -7,10 +7,12 @@ const Header = () => {
   const weather = useContext(WeatherContext);
 
   const callApi = async (input) => {
+    const url = process.env.SITE_URL;
+
     try {
       const response = await axios({
         method: 'get',
-        url: `http://localhost:3000/api/search?location=${input}`,
+        url: `${url}search?location=${input}`,
       });
       weather.setData(response.data);
     } catch (error) {
