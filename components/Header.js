@@ -1,11 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { WeatherContext } from '../WeatherContext';
+import axios from 'axios';
 
 const Header = () => {
   const [locationInput, setLocationInput] = useState('');
+  const weather = useContext(WeatherContext);
+
+  const callApi = async (input) => {
+    const response = await axios.get('/api/search');
+
+    console.log(response.data);
+  };
 
   const handleSearch = (e) => {
     e.preventDefault();
-    console.log(locationInput);
+    callApi(locationInput);
     setLocationInput('');
   };
 
