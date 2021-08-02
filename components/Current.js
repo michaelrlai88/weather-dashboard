@@ -23,7 +23,7 @@ const Current = () => {
       <div className='container-image'>
         <Image
           src={`http://openweathermap.org/img/wn/${weather.data.currentWeather.weather[0].icon}@4x.png`}
-          alt='Picture of weather'
+          alt='Picture of current weather'
           width={200}
           height={200}
         />
