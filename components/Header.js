@@ -16,7 +16,7 @@ const Header = () => {
       console.log('try2');
       console.log(response.data);
 
-      /*     weather.setData(response.data); */
+      weather.setData(response.data);
     } catch (error) {
       console.log(error.message);
     }
