@@ -3,4 +3,7 @@ module.exports = {
   images: {
     domains: ['openweathermap.org'],
   },
+  env: {
+    API_KEY: process.env.API_KEY,
+  },
 };
