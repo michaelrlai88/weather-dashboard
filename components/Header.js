@@ -1,13 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { WeatherContext } from '../WeatherContext';
 import axios from 'axios';
-import styled from 'styled-components';
-
-const Container = styled.div`
-  display: flex;
-  background-color: lightcoral;
-  height: 50px;
-`;
 
 const Header = () => {
   const [locationInput, setLocationInput] = useState('');
@@ -39,7 +32,7 @@ const Header = () => {
   };
 
   return (
-    <Container>
+    <div className='container'>
       <div>Weather Dashboard</div>
       <form>
         <input
@@ -50,7 +43,15 @@ const Header = () => {
         />
         <button onClick={handleSearch}>Search</button>
       </form>
-    </Container>
+
+      <style jsx>{`
+        .container {
+          display: flex;
+          background-color: lightcoral;
+          height: 50px;
+        }
+      `}</style>
+    </div>
   );
 };
 

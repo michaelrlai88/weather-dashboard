@@ -1,15 +1,16 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const Container = styled.div`
-  background-color: lightskyblue;
-`;
 
 const Hourly = () => {
   return (
-    <Container>
+    <div className='container'>
       <div>Hourly</div>
-    </Container>
+
+      <style jsx>{`
+        .container {
+          background-color: lightskyblue;
+        }
+      `}</style>
+    </div>
   );
 };
 

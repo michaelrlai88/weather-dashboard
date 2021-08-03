@@ -1,25 +1,14 @@
 import Image from 'next/image';
 import React, { useContext } from 'react';
 import { WeatherContext } from '../WeatherContext';
-import styled from 'styled-components';
 
 import theme from '../styles/theme';
-
-const Container = styled.div`
-  background-color: lightsalmon;
-  text-align: center;
-
-  ${theme.breakpoints.md} {
-    display: flex;
-    text-align: left;
-  }
-`;
 
 const Current = () => {
   const weather = useContext(WeatherContext);
 
   return (
-    <Container>
+    <div className='container'>
       <div className='container-image'>
         <Image
           src={`http://openweathermap.org/img/wn/${weather.data.currentWeather.weather[0].icon}@4x.png`}
@@ -33,7 +22,21 @@ const Current = () => {
         <div>{weather.data.currentWeather.weather[0].main}</div>
         <div>{weather.data.currentWeather.main.temp}&deg;F</div>
       </div>
-    </Container>
+
+      <style jsx>{`
+        .container {
+          background-color: lightsalmon;
+          text-align: center;
+        }
+
+        @media ${theme.breakpoints.md} {
+          .container {
+            display: flex;
+            text-align: left;
+          }
+        }
+      `}</style>
+    </div>
   );
 };
 
